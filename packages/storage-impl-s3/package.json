@@ -1,0 +1,17 @@
+{
+  "name": "@sui-telegram-framework/storage-impl-s3",
+  "version": "1.0.0",
+  "main": "./src/index.ts",
+  "files": [
+    "dist",
+    "src",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsc --build"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.470.0",
+    "@sui-telegram-framework/storage": "workspace:^"
+  }
+}

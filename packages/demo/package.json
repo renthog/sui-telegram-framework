@@ -1,0 +1,32 @@
+{
+  "name": "@sui-telegram-framework/demo",
+  "version": "1.0.0",
+  "main": "./src/index.ts",
+  "files": [
+    "dist",
+    "src",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "start": "ts-node src run-bot",
+    "dev": "ts-node-dev --respawn src run-bot",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/bn.js": "^5.1.2",
+    "@types/node": "^20.9.0",
+    "ts-node-dev": "^2.0.0"
+  },
+  "dependencies": {
+    "@grammyjs/conversations": "^1.1.2",
+    "@grammyjs/menu": "^1.2.1",
+    "@sui-telegram-framework/flows-grammy": "workspace:^",
+    "@sui-telegram-framework/sdk": "workspace:^",
+    "@sui-telegram-framework/storage-impl-memory": "workspace:^",
+    "axios": "^1.6.0",
+    "bn.js": "^5.2.1",
+    "commander": "^11.1.0",
+    "date-fns": "^2.30.0",
+    "grammy": "^1.20.1"
+  }
+}

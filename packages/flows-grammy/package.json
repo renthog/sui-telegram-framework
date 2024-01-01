@@ -1,0 +1,20 @@
+{
+  "name": "@sui-telegram-framework/flows-grammy",
+  "version": "1.0.0",
+  "main": "./src/index.ts",
+  "files": [
+    "dist",
+    "src",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsc --build"
+  },
+  "devDependencies": {
+    "@types/bn.js": "^5.1.2",
+    "grammy": "^1.20.1"
+  },
+  "dependencies": {
+    "@sui-telegram-framework/sdk": "workspace:^"
+  }
+}

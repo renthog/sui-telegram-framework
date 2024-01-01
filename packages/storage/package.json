@@ -1,0 +1,13 @@
+{
+  "name": "@sui-telegram-framework/storage",
+  "version": "1.0.0",
+  "main": "./src/index.ts",
+  "files": [
+    "dist",
+    "src",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsc --build"
+  }
+}

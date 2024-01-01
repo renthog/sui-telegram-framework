@@ -1,0 +1,16 @@
+{
+  "name": "@sui-telegram-framework/storage-impl-memory",
+  "version": "1.0.0",
+  "main": "./src/index.ts",
+  "files": [
+    "dist",
+    "src",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsc --build"
+  },
+  "dependencies": {
+    "@sui-telegram-framework/storage": "workspace:^"
+  }
+}
