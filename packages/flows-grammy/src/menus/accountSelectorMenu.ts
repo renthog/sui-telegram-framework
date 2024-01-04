@@ -4,13 +4,13 @@ import getSuiBalance from '@sui-telegram-framework/sdk/src/sui/getSuiBalance';
 import { SUI_DECIMALS } from '@sui-telegram-framework/sdk/src/constants';
 import { abbreviate, bnToFixed } from '@sui-telegram-framework/sdk';
 
-import { MyContext } from '../../../types';
+import { SuiTelegramAppFlavor } from '../types';
 
-export const accountSelector = (opts: {
-  onSelect: (ctx: MyContext, address: string) => Promise<unknown>;
+const accountSelectorMenu = <C extends SuiTelegramAppFlavor>(opts: {
+  onSelect: (ctx: C, address: string) => Promise<unknown>;
   navTo?: string;
 }) => {
-  return async (ctx: MyContext, range: MenuRange<MyContext>) => {
+  return async (ctx: C, range: MenuRange<C>) => {
     // Unsure how to get the MenuContext type. This .from is *for sure* defined
     // if this function is triggered from a user menu.
     const addresses = await ctx.keystorage().listKeys(ctx.from!.id);
@@ -39,3 +39,5 @@ export const accountSelector = (opts: {
     }
   };
 };
+
+export default accountSelectorMenu;

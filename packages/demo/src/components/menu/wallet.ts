@@ -1,10 +1,10 @@
 import { Menu } from '@grammyjs/menu';
 
 import getSuiBalance from '@sui-telegram-framework/sdk/src/sui/getSuiBalance';
+import accountSelectorMenu from '@sui-telegram-framework/flows-grammy/src/menus/accountSelectorMenu';
 
 import { MENU_HEADER } from './components/headerMessage';
 import { MyContext } from '../../types';
-import { accountSelector } from './components/accountSelector';
 import { createKey } from '../../services/keys';
 import { getCoinGeckoPrice } from '../../services/prices';
 import { md } from '../../util';
@@ -12,7 +12,7 @@ import { getExplorerUrl } from '@sui-telegram-framework/sdk';
 
 const wallet = new Menu<MyContext>('wallet')
   .dynamic(
-    accountSelector({
+    accountSelectorMenu({
       async onSelect(ctx, address) {
         ctx.session.selectedAddress = address;
         const currentSuiPrice = await getCoinGeckoPrice('sui');

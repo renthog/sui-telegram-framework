@@ -1,4 +1,4 @@
-import { Context } from 'grammy';
+import { Context, SessionFlavor } from 'grammy';
 import { SuiClient } from '@mysten/sui.js/dist/cjs/client';
 import { Keypair } from '@mysten/sui.js/dist/cjs/cryptography';
 
@@ -16,3 +16,10 @@ export type SuiFlavor<C extends Context = Context> = C & {
   sui(): SuiClient;
   suiNetwork: SuiNetwork;
 };
+
+export interface SessionData {
+  selectedAddress?: string;
+}
+
+export type SuiTelegramAppFlavor<C extends Context = Context> =
+  SessionFlavor<SessionData> & SuiFlavor<C> & KeyStorageFlavor<C>;
