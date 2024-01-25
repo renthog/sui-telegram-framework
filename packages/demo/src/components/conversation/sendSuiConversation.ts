@@ -31,6 +31,7 @@ async function handler(conversation: MyConversation, ctx: MyContext) {
   const keypair = await ctx
     .keystorage()
     .getKey(ctx.from.id, ctx.session.selectedAddress);
+
   if (!keypair) {
     await ctx.reply('Account not found');
     await ctx.conversation.exit();

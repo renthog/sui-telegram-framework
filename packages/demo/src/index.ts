@@ -1,8 +1,5 @@
 import { Command } from 'commander';
 
-import { InMemoryKeyStorageBackend } from '@sui-telegram-framework/storage-impl-memory';
-import { validateAndParseInitData } from '@sui-telegram-framework/sdk/src/telegram/validateInitData';
-
 import { BotOptions } from './types/options';
 import { createBot } from './bot';
 
@@ -22,7 +19,12 @@ program
     'SUI network to use',
     process.env.SUI_NETWORK
   )
-  .requiredOption('--bot-token <value>', 'Bot token', process.env.BOT_TOKEN);
+  .requiredOption('--bot-token <value>', 'Bot token', process.env.BOT_TOKEN)
+  .option(
+    '--gate-on-struct-type <value>',
+    'Optionally gate community access',
+    process.env.GATE_ON_STRUCT_TYPE
+  );
 
 program
   .command('run-bot')
